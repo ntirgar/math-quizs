@@ -12,3 +12,63 @@
 @import "../styles/accessibility.css";
 @import "../styles/design-tokens.css";
 @import "../styles/ui-components.css";
+
+/* Landing Page Modern Styles */
+.landing-hero {
+	position: relative;
+	padding: 4.5rem 1rem 3rem;
+	margin: -1.5rem -1rem 2rem; /* expand to edges inside shell */
+	background:
+		radial-gradient(circle at 20% 20%, rgba(132,56,255,0.25), transparent 60%),
+		radial-gradient(circle at 80% 30%, rgba(255,120,60,0.25), transparent 65%),
+		linear-gradient(135deg, hsl(260 70% 6%), hsl(250 60% 8%));
+	border-radius: 32px;
+	overflow: hidden;
+	box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 10px 35px -10px rgba(0,0,0,0.4);
+}
+.landing-hero:before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: repeating-linear-gradient(60deg, rgba(255,255,255,0.04) 0 12px, transparent 12px 24px);
+	pointer-events: none;
+	mix-blend-mode: overlay;
+}
+.hero-content { max-width: 980px; margin: 0 auto; }
+.gradient-title {
+	background: linear-gradient(90deg, #b084ff, #ff8e5d, #ffca5d);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+.hero-sub { color: var(--gray-4); max-width: 840px; line-height: 1.5; }
+.pill-row > * { transition: transform .2s ease, background-color .2s ease; }
+.pill-row > *:hover { transform: translateY(-3px); background: var(--gray-4); color: var(--gray-12); }
+.feature-card { backdrop-filter: blur(4px); background: linear-gradient(135deg, var(--gray-2), var(--gray-3)); border: 1px solid var(--gray-5); }
+.feature-card:hover { border-color: var(--purple-6); box-shadow: 0 4px 16px -6px rgba(0,0,0,0.3); }
+
+/* Floating math symbols */
+.float-symbol {
+	position: absolute;
+	font-size: clamp(1.8rem, 4vw, 3.2rem);
+	font-weight: 600;
+	opacity: 0.35;
+	animation: floatY 7s ease-in-out infinite, driftX 11s linear infinite;
+	pointer-events: none;
+	user-select: none;
+	color: var(--gray-5);
+}
+.sym-plus { top: 14%; left: 6%; }
+.sym-minus { top: 22%; right: 10%; animation-delay: 1.2s; }
+.sym-times { bottom: 18%; left: 12%; animation-delay: 2.3s; }
+.sym-divide { bottom: 12%; right: 8%; animation-delay: 3.4s; }
+
+@keyframes floatY {
+	0%,100% { transform: translateY(0); }
+	50% { transform: translateY(-18px); }
+}
+@keyframes driftX {
+	0% { filter: hue-rotate(0deg); }
+	50% { filter: hue-rotate(25deg); }
+	100% { filter: hue-rotate(0deg); }
+}

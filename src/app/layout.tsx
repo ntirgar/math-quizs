@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Theme } from '@radix-ui/themes';
+import { AuthProvider } from '@/components/AuthContext';
 import '@radix-ui/themes/styles.css';
 import "./globals.css";
 
@@ -25,7 +26,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased" style={cssVarStyle}>
         <Theme>
-          {children}
+          <AuthProvider>
+            {children}
+          </AuthProvider>
         </Theme>
       </body>
     </html>

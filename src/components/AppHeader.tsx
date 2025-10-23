@@ -2,6 +2,7 @@ import { Box, Heading, Text, Flex, Button, Badge } from '@radix-ui/themes';
 import Link from 'next/link';
 import { LightningBoltIcon } from '@radix-ui/react-icons';
 import { usePathname } from 'next/navigation';
+import { useAuth } from './AuthContext';
 
 // Lightweight header augmentation: adaptive mode toggle & summary
 
@@ -13,10 +14,12 @@ export function AppHeader() {
   const isSubtraction = pathname === '/subtraction';
   const isDivision = pathname === '/division';
   const isSettings = pathname === '/settings';
-  const isDashboard = pathname === '/';
+  const isDashboard = pathname === '/dashboard';
   // Global product name replaces per-page title emphasis.
   const productName = 'Maths Wizard';
-  const pageTitle = isDashboard
+  const pageTitle = pathname === '/'
+    ? 'AI Platform'
+    : isDashboard
     ? 'Dashboard'
     : isGrowth
       ? 'Growth & Learning'
@@ -32,6 +35,8 @@ export function AppHeader() {
                 ? 'Settings'
                 : 'Maths Wizard';
   const subtitle = 'An AI-powered adaptive maths learning platform helping learners master addition and multiplication through personalized practice, staged progression, and real-time analytics.';
+
+  const { user, logout, loading } = useAuth();
 
   return (
     <Box mb="6">
@@ -49,13 +54,18 @@ export function AppHeader() {
           <Text size="1" color="gray" mt="1" style={{ fontStyle:'italic' }}>{pageTitle}</Text>
         </Box>
         <Flex gap="2" align="center" wrap="wrap">
-          <Button asChild variant={isDashboard ? 'solid' : 'soft'} size="2"><Link href="/">Dashboard</Link></Button>
+          <Button asChild variant={isDashboard ? 'solid' : 'soft'} size="2"><Link href="/dashboard">Dashboard</Link></Button>
           <Button asChild variant={isAddition ? 'solid' : 'soft'} size="2"><Link href="/addition">Addition</Link></Button>
           <Button asChild variant={isSubtraction ? 'solid' : 'soft'} size="2"><Link href="/subtraction">Subtraction</Link></Button>
           <Button asChild variant={isMultiplication ? 'solid' : 'soft'} size="2"><Link href="/multiplication">Multiplication</Link></Button>
           <Button asChild variant={isDivision ? 'solid' : 'soft'} size="2"><Link href="/division">Division</Link></Button>
           <Button asChild variant={isGrowth ? 'solid' : 'soft'} size="2"><Link href="/growth">Growth</Link></Button>
           <Button asChild variant={isSettings ? 'solid' : 'soft'} size="2"><Link href="/settings">Settings</Link></Button>
+        
+        
+          {!loading && user && (
+            <Button size="2" variant="outline" color="red" onClick={()=> logout()}>Logout</Button>
+          )}
         </Flex>
       </Flex>
       {/* Subtitle moved inside title block; keep layout spacing consistent */}
