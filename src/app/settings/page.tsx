@@ -1,6 +1,5 @@
 "use client";
 import { AppShell } from '@/components/AppShell';
-import { AppHeader } from '@/components/AppHeader';
 import { Card, Heading, Text, Flex, Switch, Button } from '@radix-ui/themes';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useEffect, useState } from 'react';
@@ -33,7 +32,6 @@ export default function SettingsPage() {
 
   return (
     <AppShell>
-      <AppHeader />
       <Heading size="6" mb="3">Settings</Heading>
       <Flex direction="column" gap="4" mt="2">
         <Card size="3">
