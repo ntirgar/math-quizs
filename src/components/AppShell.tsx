@@ -1,6 +1,5 @@
 import React from 'react';
 import { AppHeader } from './AppHeader';
-import { ThemeToggle } from './ThemeToggle';
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -14,7 +13,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children, rightOfHeader }) =
         <AppHeader />
         <div style={{ display:'flex', gap:8, alignItems:'center' }}>
           {rightOfHeader}
-          <ThemeToggle />
+          {/* Theme toggle removed from global shell; now only available in Settings page */}
         </div>
       </header>
       <main>{children}</main>

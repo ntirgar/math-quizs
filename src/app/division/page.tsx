@@ -1,6 +1,5 @@
 "use client";
 import { AppShell } from '@/components/AppShell';
-import { AppHeader } from '@/components/AppHeader';
 import { Card, Heading, Text } from '@radix-ui/themes';
 import { useDivisionQuizLogic } from '@/hooks/useDivisionQuizLogic';
 import { QuizForm, Statistics } from '@/components';
@@ -24,7 +23,7 @@ export default function DivisionPage() {
 
   return (
     <AppShell>
-      <AppHeader />
+      
       <LiveAnnouncement message={showResult && lastAnswerCorrect !== null ? (lastAnswerCorrect ? 'Correct division' : 'Incorrect division') : null} />
       <Heading size="6" mb="3">Division Practice (Stage {stage})</Heading>
       <div className="quiz-layout" style={{ marginTop:'1rem' }}>
