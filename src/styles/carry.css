@@ -1,0 +1,3 @@
+/* Carry highlighting */
+.carry-source .digit-box { border-color:var(--orange-8)!important; background:var(--orange-3)!important; }
+.carry-target .digit-box { border-color:var(--purple-8)!important; background:var(--purple-3)!important; }

@@ -1,0 +1,11 @@
+/* Row & accent utilities */
+.ui-row { background: var(--gray-2); border-radius:6px; padding:6px 10px; transition: background .15s ease, box-shadow .15s ease; }
+.ui-row--emphasis { background: var(--gray-3); }
+.ui-row:hover { background: var(--gray-3); }
+.ui-row--emphasis:hover { background: var(--gray-4); }
+.ui-row:active { background: var(--gray-4); }
+.ui-row--clickable { cursor:pointer; }
+.ui-row-group { display:flex; flex-direction:column; gap:8px; }
+.ui-accent { position:relative; padding-left:16px; }
+.ui-accent::before { content:''; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:4px; background: var(--accent-color, var(--blue-8)); }
+@media (prefers-color-scheme: dark){ .ui-row { background:var(--gray-3); } .ui-row--emphasis { background:var(--gray-4); } .ui-row:hover { background:var(--gray-4); } .ui-row--emphasis:hover { background:var(--gray-5); } }

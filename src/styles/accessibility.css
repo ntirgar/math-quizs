@@ -1,0 +1,4 @@
+/* Accessibility & reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .question-transition-wrapper, .streak-glow, .streak-badge::after, .confetti-piece, .digit-selected { animation:none!important; transition:none!important; }
+}

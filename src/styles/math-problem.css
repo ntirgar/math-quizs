@@ -1,0 +1,10 @@
+/* Math problem layout */
+.math-problem-container { --base-digit-width:50px; --operator-width:40px; --container-padding:1rem; --spacing:.5rem; --question-font-size:1rem; --result-font-size:2rem; --shadow:0 2px 8px rgba(0,0,0,.1); }
+.math-problem-wrapper { width:fit-content; margin:0 auto; min-width:calc(var(--max-digits)*var(--base-digit-width) + var(--operator-width) + 200px); max-width:calc(var(--max-digits)*var(--base-digit-width) + var(--operator-width) + 400px); }
+.math-problem-question{ font-size:var(--question-font-size)!important; display:block; margin-bottom:var(--spacing); }
+.math-problem-content{ text-align:center; line-height:1.2; padding:var(--container-padding); border:2px solid var(--gray-6); border-radius:12px; background-color:var(--gray-1); display:flex; flex-direction:column; align-items:center; box-shadow:var(--shadow); margin:0 auto; }
+.math-problem-row{ margin-bottom:var(--spacing); display:flex; align-items:flex-end; justify-content:center; }
+.math-problem-addend{ border-bottom:3px solid var(--gray-8); padding-bottom:var(--spacing); }
+.math-problem-result{ font-family:monospace; font-size:var(--result-font-size); color:var(--blue-10); font-weight:bold; margin-top:var(--spacing); }
+@media (min-width:768px) and (max-width:1023px){ .math-problem-container { --base-digit-width:60px; --operator-width:50px; --container-padding:1.5rem; --spacing:.75rem; --question-font-size:1.1rem; --result-font-size:2.5rem; } }
+@media (min-width:1024px){ .math-problem-container { --base-digit-width:70px; --operator-width:60px; --container-padding:2rem; --spacing:1rem; --question-font-size:1.2rem; --result-font-size:3rem; --shadow:0 4px 12px rgba(0,0,0,.1); } }
