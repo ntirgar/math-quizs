@@ -1,0 +1,104 @@
+/* Reusable UI component classes */
+.btn-subtle {
+  background: var(--gray-4);
+  border: 1px solid var(--gray-6);
+  padding: 4px 10px;
+  font-size: 0.65rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--gray-12);
+  transition: background .15s;
+}
+.btn-subtle:hover { background: var(--gray-5); }
+.btn-subtle:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+.btn-tab, .btn-tab-active {
+  background: var(--gray-4);
+  border:1px solid var(--gray-6);
+  padding: 4px 8px;
+  font-size: 0.65rem;
+  border-radius: var(--radius-sm);
+  cursor:pointer;
+  min-width:32px;
+}
+.btn-tab-active { background: var(--purple-5); color: var(--gray-12); }
+.btn-tab:hover { background: var(--gray-5); }
+.btn-tab:focus-visible, .btn-tab-active:focus-visible { outline:none; box-shadow: var(--focus-ring); }
+
+/* Generic small button */
+.btn-small {
+  background: var(--gray-4);
+  border: 1px solid var(--gray-6);
+  padding: 6px 10px;
+  font-size: 0.65rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-small:hover { background: var(--gray-5); }
+.btn-small:focus-visible { outline:none; box-shadow: var(--focus-ring); }
+
+.btn-small--primary {
+  background: var(--purple-9);
+  border: 1px solid var(--purple-7);
+  color: white;
+}
+.btn-small--primary:hover { background: var(--purple-10); }
+
+/* Link-style button (anchor) */
+.link-button {
+  display: inline-block;
+  padding: 10px 16px;
+  background: var(--blue-9);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: .25px;
+  transition: background .15s;
+}
+.link-button:hover { background: var(--blue-10); }
+.link-button:focus-visible { outline:none; box-shadow: var(--focus-ring); }
+
+.link-button--purple { background: var(--purple-9); }
+.link-button--purple:hover { background: var(--purple-10); }
+
+/* Multiplication table preview */
+.table-preview {
+  border:2px solid var(--purple-7);
+  background: var(--purple-2);
+  padding:16px 18px;
+  border-radius:12px;
+  margin-bottom:20px;
+}
+.table-preview__facts {
+  margin-top:12px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(110px,1fr));
+  gap:8px;
+}
+.table-preview__fact {
+  background:var(--purple-3);
+  border:1px solid var(--purple-6);
+  border-radius:8px;
+  padding:8px 10px;
+  text-align:center;
+  font-size:0.75rem;
+  font-weight:600;
+  font-family:monospace;
+}
+.table-preview__progress {
+  margin-top:12px;
+  position:relative;
+  height:8px;
+  background:var(--gray-5);
+  border-radius:6px;
+  overflow:hidden;
+}
+.table-preview__progress-bar {
+  height:100%;
+  background:var(--purple-9);
+  transition:width 1s linear;
+}
+.table-preview__buttons { margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }

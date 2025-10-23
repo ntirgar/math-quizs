@@ -1,0 +1,14 @@
+:root { --background:#ffffff; --foreground:#171717; }
+@media (prefers-color-scheme: dark){ :root { --background:#0a0a0a; --foreground:#ededed; } }
+body { background:var(--background); color:var(--foreground); font-family: var(--font-geist-sans), Arial, sans-serif; margin:0; padding:0; min-height:100vh; }
+.radix-themes { --default-font-family: var(--font-geist-sans), Arial, sans-serif; }
+
+/* Responsive 3fr/1fr layout for problem + stats */
+.problem-pane { width:100%; }
+.stats-pane { width:100%; }
+.quiz-layout { display:grid; gap:1.5rem; grid-template-columns:1fr; }
+@media (min-width: 900px) {
+	.quiz-layout { grid-template-columns:3fr 1fr; align-items:start; }
+	.problem-pane { grid-column:1; }
+	.stats-pane { grid-column:2; }
+}

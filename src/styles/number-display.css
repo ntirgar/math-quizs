@@ -1,0 +1,11 @@
+/* Number display digits */
+:root {
+	--digit-box-size: 2.6em;
+	--digit-font-size: 2rem;
+}
+.digit-container { min-width:calc(var(--digit-box-size) + 0.4em); margin:0 .1em; }
+.place-value-label { font-size:.7rem; margin-bottom:.3em; min-height:1.2em; }
+.digit-box { width:var(--digit-box-size); height:var(--digit-box-size); line-height:var(--digit-box-size); border-radius:6px; font-size:var(--digit-font-size); display:inline-flex; align-items:center; justify-content:center; text-align:center; font-weight:bold; font-family:monospace; box-sizing:border-box; }
+.digit-box--empty { opacity:.3; }
+@media (min-width:768px) and (max-width:1023px){ :root { --digit-box-size: 2.9em; --digit-font-size: 2.15rem; } .digit-container { margin:0 .12em; } .place-value-label{ font-size:.8rem; } }
+@media (min-width:1024px){ :root { --digit-box-size: 3.2em; --digit-font-size: 2.4rem; } .digit-container { margin:0 .15em; } .place-value-label{ font-size:.9rem; } .digit-box{ border-radius:8px; } }

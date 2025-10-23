@@ -1,0 +1,20 @@
+/* Animations & feedback */
+@keyframes digitSelected { 0%{ transform:scale(1); box-shadow:0 0 0 0 rgba(0,100,200,.4);} 50%{ transform:scale(1.1); box-shadow:0 0 0 8px rgba(0,100,200,.1);} 100%{ transform:scale(1.05); box-shadow:0 2px 8px rgba(0,100,200,.2);} }
+.digit-selected { animation: digitSelected .3s ease-out; }
+.question-transition-wrapper { position:relative; transition: transform .5s ease, opacity .5s ease; will-change:transform, opacity; }
+.question-enter { animation: questionEnter .6s ease both; }
+.question-exit.question-correct { animation: questionExitCorrect .6s ease forwards; }
+.question-exit.question-incorrect { animation: questionExitIncorrect .6s ease forwards; }
+@keyframes questionEnter { 0%{opacity:0; transform:translateY(25px) scale(.96);} 60%{opacity:1; transform:translateY(-4px) scale(1.01);} 100%{opacity:1; transform:translateY(0) scale(1);} }
+@keyframes questionExitCorrect { 0%{opacity:1; transform:translateY(0) scale(1);} 40%{transform:translateY(-12px) scale(1.04);} 100%{opacity:0; transform:translateY(-40px) scale(.9);} }
+@keyframes questionExitIncorrect { 0%{opacity:1; transform:translateY(0) scale(1);} 20%{transform:translateX(-6px) rotate(-1deg);} 35%{transform:translateX(6px) rotate(1deg);} 50%{transform:translateX(-4px) rotate(-1deg);} 65%{transform:translateX(4px) rotate(1deg);} 80%{transform:translateX(-2px) rotate(-1deg);} 100%{opacity:0; transform:translateY(20px) scale(.94);} }
+.next-question-progress { position:absolute; left:0; bottom:-8px; height:4px; width:100%; background:var(--gray-4); border-radius:4px; overflow:hidden; margin-top:6px; }
+.next-question-progress > div { height:100%; background:linear-gradient(90deg, var(--blue-8), var(--blue-10)); transition: width .1s linear; }
+.streak-glow { animation: streakGlowPulse 1.2s ease-in-out infinite; }
+@keyframes streakGlowPulse { 0%{box-shadow:0 0 0 0 rgba(0,120,255,.4);} 50%{box-shadow:0 0 0 8px rgba(0,120,255,0);} 100%{box-shadow:0 0 0 0 rgba(0,120,255,0);} }
+.streak-badge { position:relative; }
+.streak-badge::after { content:''; position:absolute; inset:-4px; border-radius:24px; background:radial-gradient(circle at 30% 30%, rgba(255,180,0,.5), rgba(255,140,0,0) 70%); filter:blur(6px); opacity:.7; z-index:-1; animation: streakBadgePulse 1.6s ease-in-out infinite; }
+@keyframes streakBadgePulse { 0%,100%{ transform:scale(.9); opacity:.55;} 50%{ transform:scale(1.05); opacity:.85;} }
+.confetti-layer { position:absolute; inset:0; pointer-events:none; overflow:visible; }
+.confetti-piece { position:absolute; width:10px; height:14px; opacity:0; animation: confettiFall 1.8s ease-out forwards; border-radius:2px; }
+@keyframes confettiFall { 0%{ transform:translateY(-10px) rotate(0deg) scale(.8); opacity:0;} 10%{opacity:1;} 60%{ transform:translateY(55vh) rotate(180deg) scale(1);} 100%{ transform:translateY(100vh) rotate(360deg) scale(.6); opacity:0;} }
