@@ -24,7 +24,7 @@ export default function SubtractionPage() {
 
   return (
     <AppShell>
-      <AppHeader />
+      
       <LiveAnnouncement message={showResult && lastAnswerCorrect !== null ? (lastAnswerCorrect ? 'Correct subtraction' : 'Incorrect subtraction') : null} />
       <Heading size="6" mb="3">Subtraction Practice (Stage {stage})</Heading>
       <div className="quiz-layout" style={{ marginTop:'1rem' }}>

@@ -8,9 +8,9 @@ import Link from 'next/link';
 export default function HomeDashboard() {
   return (
     <AppShell>
-      <AppHeader />
-      <Heading size="6" mb="3">Welcome to Maths Wizard</Heading>
-      <Text size="3" mb="5" color="gray">Your personalized maths learning dashboard. Jump into a practice mode or review your growth analytics.</Text>
+     
+  {/* Removed duplicate heading/subtitle because AppHeader already renders product name and contextual page title */}
+  <Text size="3" mb="5" color="gray">Jump into a practice mode or review your growth analytics.</Text>
       <ProgressDashboard />
       <Flex mt="6" gap="4" wrap="wrap">
         <Card size="2" style={{ flex:'1 1 280px' }}>
@@ -27,7 +27,7 @@ export default function HomeDashboard() {
         </Card>
       </Flex>
       <Box mt="6">
-        <Text size="1" color="gray">Beta: Subtraction & Division logic coming soon.</Text>
+        <Text size="1" color="gray">Subtraction & Division practice active. More mastery analytics coming soon.</Text>
       </Box>
     </AppShell>
   );

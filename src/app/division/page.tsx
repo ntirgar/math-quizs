@@ -24,7 +24,7 @@ export default function DivisionPage() {
 
   return (
     <AppShell>
-      <AppHeader />
+      
       <LiveAnnouncement message={showResult && lastAnswerCorrect !== null ? (lastAnswerCorrect ? 'Correct division' : 'Incorrect division') : null} />
       <Heading size="6" mb="3">Division Practice (Stage {stage})</Heading>
       <div className="quiz-layout" style={{ marginTop:'1rem' }}>
