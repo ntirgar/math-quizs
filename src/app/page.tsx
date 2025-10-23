@@ -1,7 +1,6 @@
 "use client";
 import { AppShell } from '@/components/AppShell';
 import { ProgressDashboard } from '@/components/ProgressDashboard';
-import { AppHeader } from '@/components/AppHeader';
 import { Card, Flex, Heading, Text, Box } from '@radix-ui/themes';
 import Link from 'next/link';
 

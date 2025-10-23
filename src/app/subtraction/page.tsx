@@ -1,6 +1,5 @@
 "use client";
 import { AppShell } from '@/components/AppShell';
-import { AppHeader } from '@/components/AppHeader';
 import { Card, Heading, Text } from '@radix-ui/themes';
 import { useSubtractionQuizLogic } from '@/hooks/useSubtractionQuizLogic';
 import { QuizForm, Statistics } from '@/components';

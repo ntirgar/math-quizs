@@ -1,6 +1,5 @@
 "use client";
 import { AppShell } from '@/components/AppShell';
-import { AppHeader } from '@/components/AppHeader';
 import { Card, Heading, Text } from '@radix-ui/themes';
 import { useDivisionQuizLogic } from '@/hooks/useDivisionQuizLogic';
 import { QuizForm, Statistics } from '@/components';

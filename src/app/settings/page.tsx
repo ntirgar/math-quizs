@@ -2,6 +2,7 @@
 import { AppShell } from '@/components/AppShell';
 import { AppHeader } from '@/components/AppHeader';
 import { Card, Heading, Text, Flex, Switch, Button } from '@radix-ui/themes';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { useEffect, useState } from 'react';
 
 export default function SettingsPage() {
@@ -45,6 +46,10 @@ export default function SettingsPage() {
             <Flex align="center" justify="between">
               <Text>Adaptive Mode (Addition / Multiplication)</Text>
               <Switch checked={adaptiveEnabled} onCheckedChange={(v)=> { setAdaptiveEnabled(!!v); persist('adaptiveMode', !!v); persist('mult_adaptive', !!v); }} />
+            </Flex>
+            <Flex align="center" justify="between">
+              <Text>Theme</Text>
+              <ThemeToggle />
             </Flex>
           </Flex>
         </Card>
