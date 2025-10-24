@@ -1,0 +1,26 @@
+{
+	"demo@local": {
+		"id": "00000000-0000-4000-8000-demo00000001",
+		"email": "demo@local",
+		"passwordHash": "1b22dbe1ade055b64fb5dca5069668621de86a7a3fccdafdd4bcc6265ada8066",
+		"salt": "b9b1d3f3850c08d2e0d66992634e1121",
+		"createdAt": 1730000000000,
+		"plainDemoPassword": "demo123"
+	},
+	"parent@example.com": {
+		"id": "00000000-0000-4000-8000-parent000002",
+		"email": "parent@example.com",
+		"passwordHash": "9719086ba3214b1faa48867b3b94f62abd84572c6663d6d6ef974913823e4a2a",
+		"salt": "af7ce66b8023fa58d3a63079174bde7d",
+		"createdAt": 1730000005000,
+		"plainDemoPassword": "parentPass"
+	},
+	"learner@example.com": {
+		"id": "00000000-0000-4000-8000-learn000003",
+		"email": "learner@example.com",
+		"passwordHash": "9d16bf4028284e8a9bc198a59d48f1c89d2baf6c1fd6206333f27a648eb509a1",
+		"salt": "e1696887c72370e35e935b4cc19cf3b0",
+		"createdAt": 1730000010000,
+		"plainDemoPassword": "learn2025"
+	}
+}
